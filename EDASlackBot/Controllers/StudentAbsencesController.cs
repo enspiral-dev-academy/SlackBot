@@ -11,8 +11,6 @@ namespace EDASlackBot.Controllers
 {
     public class StudentAbsencesController : ApiController
     {
-        // GET: api/StudentAbsences
-
         // POST: api/StudentAbsences
         public IHttpActionResult Post(SlackMessage value)
         {
@@ -21,17 +19,8 @@ namespace EDASlackBot.Controllers
             {
                 return Ok(new {text = "Have you added this absence to the Trello board? https://trello.com/b/O1ZpHQlr/eda-students" });
             }
+
             return Ok();
-        }
-
-        // PUT: api/StudentAbsences/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/StudentAbsences/5
-        public void Delete(int id)
-        {
         }
     }
 }
