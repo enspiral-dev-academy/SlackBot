@@ -15,7 +15,7 @@ namespace EDASlackBot.Controllers
         // POST: api/StudentAbsences
         public IHttpActionResult Post(SlackMessage value)
         {
-            return Ok(new { text = value.Text});
+            return Ok(new { text = value.UserId + " " + value.UserName});
         }
 
         // PUT: api/StudentAbsences/5
