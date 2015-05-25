@@ -16,7 +16,7 @@ namespace EDASlackBot.Controllers
         // POST: api/StudentAbsences
         public IHttpActionResult Post(SlackMessage value)
         {
-            var studentAwayWords = CloudConfigurationManager.GetSetting("AwayPhrases").Split(',');
+            var studentAwayWords = CloudConfigurationManager.GetSetting("AwayPhrases").Split(','); 
             if (studentAwayWords.Any(word => value.Text.Contains(word)))
             {
                 return Ok(new {text = "Have you added this absence to the Trello board? https://trello.com/b/O1ZpHQlr/eda-students" });
