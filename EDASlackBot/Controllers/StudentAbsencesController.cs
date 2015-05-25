@@ -17,7 +17,7 @@ namespace EDASlackBot.Controllers
             var studentAwayWords = CloudConfigurationManager.GetSetting("AwayPhrases").Split(','); 
             if (studentAwayWords.Any(word => value.Text.Contains(word)))
             {
-                return Ok(new {text = "Have you added this absence to the Trello board? https://trello.com/b/O1ZpHQlr/eda-students" });
+                return Ok(new {text = string.Format("Have you added this absence to the Trello board? {0}", CloudConfigurationManager.GetSetting("TrelloLink")) });
             }
 
             return Ok();
