@@ -24,5 +24,13 @@ namespace EDASlackBot.Models
         public string Text { get; set; }
         [JsonProperty(PropertyName = "trigger_word")]
         public string TriggerWord { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("Text: {0}, UserID: {1}, UserName: {2}, TriggerWord: {3}, Token: {4}",
+                Text, UserId, UserName, TriggerWord, Token);
+        }
     }
+
+    
 }
