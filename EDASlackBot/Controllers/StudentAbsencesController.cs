@@ -15,7 +15,11 @@ namespace EDASlackBot.Controllers
         // POST: api/StudentAbsences
         public IHttpActionResult Post(SlackMessage value)
         {
-            return Ok(new { text = value});
+            if (value.Text.Contains("is away".ToLowerInvariant()))
+            {
+                return Ok(new {text = "Have you added this absence to the Trello board?"});
+            }
+            return Ok();
         }
 
         // PUT: api/StudentAbsences/5
